@@ -1,0 +1,14 @@
+{
+  "name": "amplifier-capability-stories",
+  "version": "0.1.0",
+  "kind": "skill",
+  "engine": "LLM",
+  "surfaces": [
+    "agent-skills"
+  ],
+  "secret_names": [],
+  "status": "local-review",
+  "canonical_manifest": "capability.json",
+  "python": ">=3.11 (optional checker only)",
+  "dependencies": []
+}

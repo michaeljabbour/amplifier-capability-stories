@@ -1,0 +1,22 @@
+test_cancellation_rejects_draft_review (test_checker.StructuralBoundaryTests.test_cancellation_rejects_draft_review) ... ok
+test_cancelled_cli_is_readonly_and_reports_cancelled (test_checker.StructuralBoundaryTests.test_cancelled_cli_is_readonly_and_reports_cancelled) ... ok
+test_changed_audience_rejected (test_checker.StructuralBoundaryTests.test_changed_audience_rejected) ... ok
+test_checker_does_not_claim_semantic_entailment (test_checker.StructuralBoundaryTests.test_checker_does_not_claim_semantic_entailment) ... ok
+test_duplicate_claim_id_rejected (test_checker.StructuralBoundaryTests.test_duplicate_claim_id_rejected) ... ok
+test_duplicate_json_keys_refused (test_checker.StructuralBoundaryTests.test_duplicate_json_keys_refused) ... ok
+test_malformed_json_refused (test_checker.StructuralBoundaryTests.test_malformed_json_refused) ... ok
+test_missing_reference_rejected (test_checker.StructuralBoundaryTests.test_missing_reference_rejected) ... ok
+test_size_bound_refused (test_checker.StructuralBoundaryTests.test_size_bound_refused) ... ok
+test_source_locator_is_not_traversed (test_checker.StructuralBoundaryTests.test_source_locator_is_not_traversed) ... ok
+test_source_withheld_for_output_rejected (test_checker.StructuralBoundaryTests.test_source_withheld_for_output_rejected) ... ok
+test_symlink_refused (test_checker.StructuralBoundaryTests.test_symlink_refused) ... ok
+test_undeclared_reference_rejected (test_checker.StructuralBoundaryTests.test_undeclared_reference_rejected) ... ok
+test_unknown_source_rejected (test_checker.StructuralBoundaryTests.test_unknown_source_rejected) ... ok
+test_unsupported_claim_cannot_be_used (test_checker.StructuralBoundaryTests.test_unsupported_claim_cannot_be_used) ... ok
+test_used_claim_needs_source (test_checker.StructuralBoundaryTests.test_used_claim_needs_source) ... ok
+test_valid_supplied_contract (test_checker.StructuralBoundaryTests.test_valid_supplied_contract) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.066s
+
+OK

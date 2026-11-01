@@ -1,0 +1,26 @@
+{
+  "run": "upstream-method-development-baseline",
+  "fixture": "evals/dev/repair-club.json",
+  "output": "evals/baseline/repair-club-output.md",
+  "method_freeze_commit": "60218b50b14f3519b3d257c1ca5e47c4a1288dd9",
+  "execution": "Authoring agent applied frozen upstream method instructions within the supplied task constraints; no recipe/tool/provider execution",
+  "diagnostic_observation": {
+    "visit_denominator_preserved": true,
+    "feedback_denominator_and_no_baseline_preserved": true,
+    "unsupported_time_and_roi_not_claimed": true,
+    "proposal_distinct_from_outcome": true,
+    "private_marker_absent": true,
+    "core_facts_consistent_across_drafts": true
+  },
+  "failures": [],
+  "comparative_quality_claim": "not measured",
+  "limits": [
+    "Same authoring agent wrote and inspected this development sample; not independent or blinded",
+    "No repeated consistency trial, control/placebo, different-family judge or outside-user measurement",
+    "Stop and leave-alone cases are tested separately; this sample does not establish them"
+  ],
+  "external_model_calls": 0,
+  "new_service_cost_usd": 0,
+  "recorded_at": "2026-10-30T22:03:53.915419+00:00",
+  "recorded_at_basis": "Retained baseline artifact filesystem write time"
+}

@@ -1,0 +1,76 @@
+{
+  "contract_version": "stories-output/v1",
+  "status": "draft",
+  "title": "A shorter first step, with a question still open",
+  "adaptation_audience": "executive",
+  "claims": [
+    {
+      "id": "C1",
+      "text": "A one-page booking form was tried for three Saturdays.",
+      "status": "supported",
+      "source_ids": [
+        "S1"
+      ],
+      "rationale": "S1 records the form change and trial duration."
+    },
+    {
+      "id": "C2",
+      "text": "The log records 42 visits, not 42 unique people.",
+      "status": "supported",
+      "source_ids": [
+        "S2"
+      ],
+      "rationale": "12 + 16 + 14 = 42 visits; the log does not identify unique people."
+    },
+    {
+      "id": "C3",
+      "text": "Four of six voluntary feedback cards called the first step clearer; two requested an example photo. No baseline survey was run.",
+      "status": "supported",
+      "source_ids": [
+        "S3"
+      ],
+      "rationale": "The small voluntary sample and missing baseline bound the inference."
+    },
+    {
+      "id": "C4",
+      "text": "The new page saved volunteers 50% of their time and delivered positive ROI.",
+      "status": "unsupported",
+      "source_ids": [],
+      "rationale": "S4 states that neither staff time nor financial return was measured. This requested claim is omitted from both drafts."
+    },
+    {
+      "id": "C5",
+      "text": "Comparable waiting-time observations are a proposed next check.",
+      "status": "proposed",
+      "source_ids": [
+        "S4"
+      ],
+      "rationale": "S4 records the suggestion, not an observed waiting-time outcome."
+    },
+    {
+      "id": "C6",
+      "text": "Waiting time, staff time, attendance effect and financial return were not measured.",
+      "status": "supported",
+      "source_ids": [
+        "S4"
+      ],
+      "rationale": "S4 explicitly lists these missing measurements."
+    }
+  ],
+  "used_claim_ids": {
+    "case-study.md": [
+      "C1",
+      "C2",
+      "C3",
+      "C5",
+      "C6"
+    ],
+    "adaptation.md": [
+      "C1",
+      "C2",
+      "C3",
+      "C5",
+      "C6"
+    ]
+  }
+}

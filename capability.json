@@ -1,0 +1,108 @@
+{
+  "contract_version": "amplifier-capability/v1",
+  "id": "stories",
+  "name": "amplifier-capability-stories",
+  "display_name": "Stories",
+  "legacy_names": [],
+  "version": "0.1.0",
+  "kind": "skill",
+  "engine": "LLM",
+  "engine_components": {
+    "caller_method": "LLM",
+    "structural_checker": "Deterministic standard-library Python; not a claim judge"
+  },
+  "promise": "Turn selected evidence about documented project work into one sourced case study and one audience adaptation with a shared claim map.",
+  "surfaces": [
+    "agent-skills"
+  ],
+  "portable_method": {
+    "name": "stories",
+    "path": "skills/stories",
+    "include": [
+      "."
+    ],
+    "contract": "Caller-applied Agent Skills directory; no independent execution loop"
+  },
+  "interfaces": {
+    "portable": {
+      "input": "stories-input/v1: explicit selected sources, purpose, primary audience, one adaptation audience, visibility and stop flag",
+      "output": "stories-output/v1: Markdown case study and one adaptation, shared JSON claim ledger and review note",
+      "failure": "Return a cancellation or evidence/privacy gap; do not invent a success story"
+    },
+    "native": null
+  },
+  "permissions": {
+    "installation": {
+      "network": false,
+      "executes_capability_code": false,
+      "grants_runtime_permissions": false,
+      "writes": [
+        "Operator-selected discovery destination and shared-installer transaction records"
+      ]
+    },
+    "runtime": {
+      "reads": "Only selected evidence pack and explicitly chosen draft files; source locators remain inert",
+      "writes": "Caller chooses a new draft directory; checker is read-only",
+      "network": false,
+      "publication": "No publication or sending interface; separate authorization required"
+    },
+    "secret_names": {
+      "discovery_requires": [],
+      "runtime_requires": []
+    }
+  },
+  "dataflow": {
+    "installation": "Existing shared canonical installer copies pinned tracked method files with SHA-256 receipts; no capability execution or provider call",
+    "method": "Caller applies the method to explicitly authorized evidence; host data transmission and provider authorization remain the caller responsibility",
+    "checker": "Explicit input file and four named local output files only; no network, environment secrets or source-locator traversal"
+  },
+  "source_policy": {
+    "revision": "Use a full 40-character source Git commit with the existing shared canonical installer",
+    "research": ".research/market is local-only and ignored; refresh policy is in AGENTS.md",
+    "provenance": "MIT method concepts adapted from the inspected amplifier-module-stories source at bc4b70c20c787488067c8a3098211a12252a370d; source notice retained",
+    "rights": "MIT for the distributed method, code and included generic assets; supplied source material retains its own rights and privacy limits."
+  },
+  "docs": [
+    "docs/RIGHT-SHAPE.md",
+    "docs/BENCHMARK.md",
+    "docs/INSTALL.md",
+    "contracts/README.md"
+  ],
+  "publication_status": "Publication is a separate owner operation; this capability only prepares local drafts.",
+  "verification": [
+    {
+      "name": "Package and structural checker",
+      "status": "passed",
+      "scope": "One canonical entry, local links, 17 read-only boundary tests; L0 mechanisms only",
+      "evidence": "docs/evaluations/2026-10-30/RESULT.json"
+    },
+    {
+      "name": "Development fixture",
+      "status": "passed-scoped",
+      "scope": "Six offline diagnostics; authoring baseline/final same-agent and not blind; no quality gain claimed",
+      "evidence": "docs/evaluations/2026-10-30/RESULT.json"
+    },
+    {
+      "name": "Held-out behavior",
+      "status": "not-run-by-package-author",
+      "scope": "Parent-controlled held-out evaluation remains separate"
+    }
+  ],
+  "optional_handoffs": [
+    "Research",
+    "Long Read",
+    "ArticleCraft",
+    "Idea Talks",
+    "Taste & Elegance"
+  ],
+  "boundaries": [
+    "Nonfiction documented-project communication; not a general fiction engine",
+    "One audience adaptation; Markdown and JSON only",
+    "No source mining, document-renderer installation, autonomous recipes, publishing or paid calls"
+  ],
+  "guide_url": "https://michaeljabbour.github.io/capabilities/stories/",
+  "install_url": "https://michaeljabbour.github.io/capabilities/stories/#setup",
+  "guide_publication_status": "Coordinated main-site guide; repository owner controls publication.",
+  "version_basis": "Initial MIT package; scoped verification does not imply writing quality or independent human usefulness.",
+  "repository_url": "https://github.com/michaeljabbour/amplifier-capability-stories"
+}

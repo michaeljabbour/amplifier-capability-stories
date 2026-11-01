@@ -1,0 +1,69 @@
+{
+  "schema_version": "stories-development-result/v1",
+  "at": "2026-10-30T22:09:14.398818+00:00",
+  "status": "pass",
+  "checks": [
+    {
+      "id": "draft-ledger-source-contract",
+      "status": "pass",
+      "scope": "structural-only",
+      "claims": 6,
+      "drafts": 2
+    },
+    {
+      "id": "fictional-private-marker-excluded",
+      "status": "pass",
+      "scope": "literal planted marker only; not a general privacy guarantee"
+    },
+    {
+      "id": "same-core-claim-ids-across-adaptation",
+      "status": "pass",
+      "scope": "selected fixture continuity, not semantic equivalence"
+    },
+    {
+      "id": "unsupported-roi-excluded-from-usage",
+      "status": "pass"
+    },
+    {
+      "id": "proposed-next-check-not-an-outcome",
+      "status": "pass",
+      "scope": "fixture labels and literal text; human reading still required"
+    },
+    {
+      "id": "read-only-checker-boundaries",
+      "status": "pass",
+      "returncode": 0,
+      "log": "final-boundary-tests.log"
+    }
+  ],
+  "source_hashes": {
+    "skills/stories/scripts/check.py": "b104482c08714c76a416ea9b66c3397c54bc3f88351f206ebb2ab05e625e9219",
+    "skills/stories/SKILL.md": "131e937f51d7528c0b1c11c43535075191d8953b17d88a241975db4a9d66644d",
+    "evals/dev/repair-club.json": "b4bf8e8c57204bfb731869670cbcbdb6ca0a7676a156c8a4343082d66c8aa2de",
+    "evals/dev/final/claims.json": "388186c51af9a0306048f0cbd31dd472121a9bd38003555a1bbe0e386e69418a",
+    "evals/dev/final/case-study.md": "d10a45d49700de04116bbb52012deef0559080e7197b5b2724be1ef1719e9310",
+    "evals/dev/final/adaptation.md": "e827546fe2306539d70bb017779049b3bf273454599b4e3b18d5079f090a5a52"
+  },
+  "baseline": {
+    "output": "evals/baseline/repair-club-output.md",
+    "diagnostic": "Evidence/privacy constraints were already respected; no demonstrated semantic improvement",
+    "same_agent": true
+  },
+  "final_authoring": {
+    "output": "evals/dev/final",
+    "execution": "Normal authoring-agent application of the packaged method; no external provider experiment",
+    "independent_or_blind": false
+  },
+  "hill_climb": {
+    "initial_boundary_tests": "16 passed, 1 failed duplicate-key rejection",
+    "correction": "Reject duplicate JSON object keys so ambiguity cannot change a stop/approval value",
+    "iterations": 1,
+    "regression_result": "See exact final boundary log"
+  },
+  "held_out": "not read or run by this package author; parent-controlled",
+  "L1_blind_different_family": "not measured",
+  "L3_outside_user": "not measured",
+  "external_provider_calls": 0,
+  "new_dependencies": [],
+  "new_service_cost_usd": 0
+}

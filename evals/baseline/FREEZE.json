@@ -1,0 +1,26 @@
+{
+  "frozen_at": "2026-10-30T22:03:29.434618+00:00",
+  "source_commit": "bc4b70c20c787488067c8a3098211a12252a370d",
+  "sources": [
+    {
+      "path": "agents/story-researcher.md",
+      "sha256": "3d557a3cc2811eb2b3eccebf1609ec0f33d4aac4ac4d8c93c6bba076a076da0f"
+    },
+    {
+      "path": "agents/content-strategist.md",
+      "sha256": "6b2454dcd7fe1a7dae091acdd91e5c2857de1594b365f6780ff0d23032d48bf4"
+    },
+    {
+      "path": "agents/content-adapter.md",
+      "sha256": "4818f7e5676c508cae56b30ff86cee493b7efd355928ed5a8f41075cb6672412"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "fa04c6e0926b7c0cb62fbce54c20571a775a6ff1df3fc292dd22a7819cf1cb50"
+    }
+  ],
+  "fixture_sha256": "b4bf8e8c57204bfb731869670cbcbdb6ca0a7676a156c8a4343082d66c8aa2de",
+  "protocol_sha256": "f15446f399f2317b452f379c973dec45e97f92a03638dc9c60bce8ae618d93ec",
+  "new_method_present": false,
+  "external_model_calls": 0
+}

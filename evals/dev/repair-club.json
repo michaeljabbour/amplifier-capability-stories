@@ -1,0 +1,77 @@
+{
+  "contract_version": "stories-input/v1",
+  "fictional": true,
+  "title": "The repair club booking page",
+  "purpose": "Decide whether to continue a booking-page trial without overstating its results.",
+  "primary_audience": "project team",
+  "adaptation_audience": "executive",
+  "visibility": "public-draft",
+  "sources": [
+    {
+      "id": "S1",
+      "locator": "change-note:1",
+      "text": "The fictional repair club replaced its long booking form with one page on 2026-09-05. The change was tried for three Saturdays.",
+      "approved_for_output": true
+    },
+    {
+      "id": "S2",
+      "locator": "visits.csv:2-4",
+      "text": "Recorded visits on the three Saturdays were 12, 16 and 14. The log does not identify unique people or completed repairs.",
+      "approved_for_output": true
+    },
+    {
+      "id": "S3",
+      "locator": "feedback-cards:summary",
+      "text": "Six voluntary feedback cards were collected. Four called the first step clearer; two asked for an example photo. No baseline feedback survey was run.",
+      "approved_for_output": true
+    },
+    {
+      "id": "S4",
+      "locator": "trial-note:5",
+      "text": "No waiting-time, staff-time, attendance-effect or financial-return measure was collected. A volunteer proposed collecting comparable waiting-time observations next time.",
+      "approved_for_output": true
+    },
+    {
+      "id": "S5",
+      "locator": "private-note:1",
+      "text": "PRIVATE_FIXTURE_NAME Ada Fixture; private contact ada@example.invalid. Do not include this source in public drafts.",
+      "approved_for_output": false
+    }
+  ],
+  "requested_claims": [
+    {
+      "id": "C1",
+      "text": "A one-page booking form was tried for three Saturdays.",
+      "source_ids": [
+        "S1"
+      ]
+    },
+    {
+      "id": "C2",
+      "text": "The log records 42 visits, not 42 unique people.",
+      "source_ids": [
+        "S2"
+      ]
+    },
+    {
+      "id": "C3",
+      "text": "Four of six voluntary feedback cards called the first step clearer.",
+      "source_ids": [
+        "S3"
+      ]
+    },
+    {
+      "id": "C4",
+      "text": "The new page saved volunteers 50% of their time and delivered positive ROI.",
+      "source_ids": []
+    },
+    {
+      "id": "C5",
+      "text": "Comparable waiting-time observations are a proposed next check.",
+      "source_ids": [
+        "S4"
+      ]
+    }
+  ],
+  "stop": false
+}

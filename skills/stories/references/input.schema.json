@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:stories:input:v1",
+  "title": "Stories selected evidence pack",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "title",
+    "purpose",
+    "primary_audience",
+    "adaptation_audience",
+    "visibility",
+    "sources",
+    "requested_claims",
+    "stop"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "stories-input/v1"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "primary_audience": {
+      "type": "string",
+      "minLength": 1
+    },
+    "adaptation_audience": {
+      "type": "string",
+      "minLength": 1
+    },
+    "visibility": {
+      "enum": [
+        "public-draft",
+        "private-draft"
+      ]
+    },
+    "stop": {
+      "type": "boolean"
+    },
+    "fictional": {
+      "type": "boolean"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "locator",
+          "text",
+          "approved_for_output"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^S[A-Za-z0-9_-]{0,63}$"
+          },
+          "locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "approved_for_output": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "requested_claims": {
+      "type": "array",
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "source_ids"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^C[A-Za-z0-9_-]{0,63}$"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

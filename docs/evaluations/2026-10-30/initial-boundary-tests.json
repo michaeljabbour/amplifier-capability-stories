@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-30T22:08:43.414215+00:00",
+  "returncode": 1,
+  "checker_sha256": "c63fc2b8b1d416a289698f9e8890214373e91de5a92388de08d7a02af5894b46",
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "result": "failed duplicate JSON key rejection"
+}

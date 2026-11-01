@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:stories:output:v1",
+  "title": "Stories draft ledger",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "status",
+    "title",
+    "adaptation_audience",
+    "claims",
+    "used_claim_ids"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": "stories-output/v1"
+    },
+    "status": {
+      "const": "draft"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "adaptation_audience": {
+      "type": "string",
+      "minLength": 1
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 100,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "text",
+          "status",
+          "source_ids",
+          "rationale"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^C[A-Za-z0-9_-]{0,63}$"
+          },
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status": {
+            "enum": [
+              "supported",
+              "proposed",
+              "unsupported"
+            ]
+          },
+          "source_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "used_claim_ids": {
+      "type": "object",
+      "required": [
+        "case-study.md",
+        "adaptation.md"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "case-study.md": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "adaptation.md": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
