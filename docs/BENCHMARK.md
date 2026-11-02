@@ -22,3 +22,6 @@ Stop after contract checks pass and no supported development improvement remains
 No extra provider calls, credentials, services or dependencies are needed for L0 and local diagnostics. Normal authoring-agent samples are recorded as such; they are not independently billed provider experiments. No price/cost or quality improvement is inferred. A paid different-family campaign requires a separately approved model/token budget; none is requested or spent here. Outside-user outcomes, reader understanding, adoption and return remain **not measured**.
 
 `make eval` runs deterministic structural/development checks and writes a dated result. It does not execute the writing method, a provider, a real user task or an upstream recipe.
+## Development replay output
+
+`make eval` writes a fresh timestamped directory under ignored `.eval-output/`. To choose another new directory, run `python3 scripts/evaluate_dev.py --output NEW_DIRECTORY`. Existing paths and symlinked output paths are refused. The frozen `docs/evaluations/2026-10-30/` record is historical evidence and is never the destination of a new replay. A successful replay checks the exposed development fixture and structural boundaries; it establishes neither semantic quality nor a comparative or outside-user outcome.

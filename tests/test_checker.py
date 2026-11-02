@@ -119,7 +119,28 @@ class StructuralBoundaryTests(unittest.TestCase):
 
     def test_checker_does_not_claim_semantic_entailment(self):
         self.ledger["claims"][0]["text"] = "This deliberately unrelated claim still has a structurally valid source ID."
-        self.assertEqual(self.run_output()["scope"], "structural-only")
+        result = self.run_output()
+        self.assertEqual(result["scope"], "structural-only")
+        self.assertTrue(result["semantic_review_required"])
+
+    def test_claim_free_maintenance_is_preserved_and_disclosed(self):
+        for name in checker.DRAFTS:
+            self.ledger["used_claim_ids"][name] = []
+            (self.folder / name).write_text("Maintenance note: more evidence is needed before a project account.\n")
+        result = self.run_output()
+        self.assertEqual(result["status"], "pass")
+        self.assertEqual(result["referenced_claims_per_draft"], {name: 0 for name in checker.DRAFTS})
+        self.assertEqual(len(result["warnings"]), 2)
+        self.assertTrue(result["semantic_review_required"])
+
+    def test_coverage_is_reported_separately_for_each_draft(self):
+        self.ledger["used_claim_ids"]["adaptation.md"] = []
+        (self.folder / "adaptation.md").write_text("Adaptation withheld pending author review.\n")
+        result = self.run_output()
+        self.assertGreater(result["referenced_claims_per_draft"]["case-study.md"], 0)
+        self.assertEqual(result["referenced_claims_per_draft"]["adaptation.md"], 0)
+        self.assertEqual(len(result["warnings"]), 1)
+        self.assertIn("adaptation.md", result["warnings"][0])
 
 
 if __name__ == "__main__":

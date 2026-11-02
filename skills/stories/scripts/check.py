@@ -101,11 +101,16 @@ def output(value, pack, sources, folder):
         source_ids(row, sources)
     usage = value.get("used_claim_ids")
     require(isinstance(usage, dict) and set(usage) == set(DRAFTS), "Usage must name exactly the two draft files")
+    referenced_claims = {}
+    warnings = []
     for filename in DRAFTS:
         used = usage[filename]
         require(isinstance(used, list) and all(isinstance(x, str) for x in used), "Usage IDs must be strings")
         require(len(used) == len(set(used)), "Duplicate used claim ID")
         require(all(x in claims for x in used), "Unknown used claim")
+        referenced_claims[filename] = len(used)
+        if not used:
+            warnings.append(filename + ": no declared claim references; review whether a source-backed draft or a claim-free maintenance note is intended")
         draft = read_text(folder / filename)
         require(bool(draft.strip()), "Draft is empty")
         require(set(REF.findall(draft)) == set(used), "Draft claim references differ from declared usage")
@@ -115,7 +120,9 @@ def output(value, pack, sources, folder):
             require(bool(row["source_ids"]), "Used claim lacks a source")
             require(all(sources[x]["approved_for_output"] for x in row["source_ids"]), "Draft uses a source not approved for this output")
     require(bool(read_text(folder / "review.md").strip()), "Review note is empty")
-    return {"status": "pass", "scope": "structural-only", "claims": len(claims), "drafts": len(DRAFTS)}
+    return {"status": "pass", "scope": "structural-only", "claims": len(claims), "drafts": len(DRAFTS),
+            "referenced_claims_per_draft": referenced_claims, "warnings": warnings,
+            "semantic_review_required": True}
 
 
 def main(argv=None):
